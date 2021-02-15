@@ -7,7 +7,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		
 		double[] jan = new double [31];
-		double[] fev = new double [28];
+		double[] fev = new double [29];
 		double[] mar = new double [31];
 		double[] abr = new double [30];
 		double[] mai = new double [31];
@@ -73,24 +73,49 @@ public class Main {
             	}
             	
             	if (mes == 2) {
-            		for (i = 0; i < fev.length; i++){
-            		       System.out.println("Dia " + (i+1));
-            		       fev[i] = input.nextDouble();
-            		       soma = soma + fev[i];
-            		       media = soma/fev.length; 
-            		       if (fev[i] < tmin) {
-            		           tmin = fev[i];
-            		       }
-            		       if (fev[i] > tmax) {
-            		           tmax = fev[i];
-            		       }
-            		}
-                    System.out.println("Ok, todos os dias foram preenchidos! ");					
+            		if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {
+            			for (i = 0; i <= 29; i++){
+             		       System.out.println("Dia " + (i+1));
+             		       fev[i] = input.nextDouble();
+             		       soma = soma + fev[i];
+             		       media = soma/fev.length; 
+             		       if (fev[i] < tmin) {
+             		           tmin = fev[i];
+             		       }
+             		       if (fev[i] > tmax) {
+             		           tmax = fev[i];
+             		       }
+             		} 
+            		System.out.println("Ok, todos os dias foram preenchidos! ");					
             		System.out.println("A media é: " + media);
             		System.out.println("A temperatura mínima foi: " + tmin);
             		System.out.println("A temperatura máxima foi: " + tmax);
             		System.out.println(" ");
-            				break;
+            		break;
+            			
+            		} else {
+            			
+            			for (i = 0; i <= 28; i++){
+              		       System.out.println("Dia " + (i+1));
+              		       fev[i] = input.nextDouble();
+              		       soma = soma + fev[i];
+              		       media = soma/fev.length; 
+              		       if (fev[i] < tmin) {
+              		           tmin = fev[i];
+              		       }
+              		       if (fev[i] > tmax) {
+              		           tmax = fev[i];
+              		       }
+              		} 
+            		System.out.println("Ok, todos os dias foram preenchidos! ");					
+            		System.out.println("A media é: " + media);
+            		System.out.println("A temperatura mínima foi: " + tmin);
+            		System.out.println("A temperatura máxima foi: " + tmax);
+            		System.out.println(" ");
+            		break;
+            		}
+                   
+            	
             		    
             	}
             	
